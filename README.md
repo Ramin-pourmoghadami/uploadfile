@@ -1,1 +1,3 @@
 # uploadfile
+This is an arbitrary challenge written procedurally. It does not have many features. It has features such as uploading a file, determining the allowed upload size, determining the allowed upload types, creating unique names to avoid copying files with duplicate names, displaying error or success messages.
+If you want to use these source codes, don't forget to go to the config file and configure the required settings there. I am learning myself, so I would really appreciate it if you could help me to make the code better and cleaner
