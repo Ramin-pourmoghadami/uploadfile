@@ -6,4 +6,4 @@ $allowedFileTypesSting = implode(',', $allowedFileTypes);
 $allowedFileTypesWithoutDotString = implode(",",$allowedFileTypesWithoutDot );
 $maxFileSize = 10000000;
 $uploadPath = 'uploaded/';
-$root = "http://pasivan.com/";
+$root = "http://pasivan.com/uploader/";
