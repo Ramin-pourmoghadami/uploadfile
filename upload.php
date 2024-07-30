@@ -46,7 +46,6 @@ if (!checkFileType($fileType, $allowedFileTypesWithoutDot)) {
 if (!checkFileSize($fileSize, $maxFileSize)) {
     $message = " حداکثر مقدار مجاز " . $maxFileSize / 1000000 . " مگابایت است ";
     message($message, "uploadError", "index.php");
-
 }
 
 if (!uploadFile($fileTmpPath, $uploadPath, $fileName)) {
