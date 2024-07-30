@@ -15,6 +15,16 @@ body {
   font-family: Vazir-Medium;
   
 }
+#preview{
+    text-align: center;
+    grid-area: 2 / 2;
+    padding-bottom: 20px;
+
+}
+#preview img{
+    width: 50%;
+    border-radius: 12px;
+}
 .red_error {
     background: red;
     padding: 20px;
@@ -27,7 +37,11 @@ body {
     padding: 20px;
     text-align: center;
     border-radius: 12px;
+    align-items: center;
     color: #fff;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10%;
 }
   .container{
     max-width: 600px;
@@ -111,6 +125,20 @@ padding: 0.7rem 14rem 0.7rem 0.7rem;
     border-radius: 5px 0 0 5px;
     border-right: 0;
     width: 100%;
-
-
+}
+#previewButton , .downloadFileLink{
+    background: #5D9EFF;
+    padding: 10px;
+    border: none;
+    border-radius: 12px;
+    text-decoration: none;
+    cursor: pointer;
+    color: #000000;
+    font-size: 16px;
+}
+.downloadFileLink{
+    grid-area: 1;
+}
+.message{
+    font-size: 16px;
 }

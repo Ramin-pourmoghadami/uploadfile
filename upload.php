@@ -3,7 +3,7 @@ include "configUpload.php";
 $fileType = pathinfo($_FILES['uploadedFile']['full_path'], PATHINFO_EXTENSION);
 $fileSize = $_FILES["uploadedFile"]["size"];
 $fileTmpPath = $_FILES['uploadedFile']['tmp_name'];
-$fileName = uniqid('', true) . '_' . md5(uniqid(rand(), true));
+$fileName = uniqid('', true) . '_' . md5(uniqid(rand(), true)) . ".$fileType";
 
 if (!isset($_FILES['uploadedFile']) or $_FILES['uploadedFile']['error'] != 0) {
     $message = "مشکلی در بارگذاری فایل وجود دارد, لطفا فایل خود را دوباره آپلود کنید";
@@ -54,8 +54,11 @@ if (!uploadFile($fileTmpPath, $uploadPath, $fileName)) {
     message($message, "uploadError", "index.php");
 }
 $fileLink = $root . $uploadPath . $fileName;
+$_SESSION["fileLink"] = $fileLink;
 $message = <<<TEXT
-آپلود با موفقیت انجام شد.
-    <a target="_blank" href='{$fileLink}'>برای دیدن کلیک کنید</a>
+    <span class="message">آپلود با موفقیت انجام شد</span>
+    <a download href="{$fileLink}" target="_blank" class="downloadFileLink">برای دانلود کلیک کنید</a>
+        <button type="button" id="previewButton">برای مشاهده کلیک کنید</button>
+
 TEXT;
 message($message, "uploadSuccess", "index.php");

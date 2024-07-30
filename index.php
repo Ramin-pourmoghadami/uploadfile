@@ -20,7 +20,17 @@ include "configUpload.php";
 <?php if(isset($_SESSION["uploadSuccess"])): ?>
     <div class="green_success">
         <?= $_SESSION["uploadSuccess"]?>
+        <div id="preview"></div>
     </div>
+
+
+    <script>
+        document.getElementById('previewButton').addEventListener('click', function() {
+            var preview = document.getElementById('preview');
+            var imageUrl = '<?= $_SESSION["fileLink"] ?>';
+            preview.innerHTML = '<img src="' + imageUrl + '" alt="Preview">';
+        });
+    </script>
 <?php endif; ?>
 <div class="container">
     <form method="POST" action="upload.php" enctype="multipart/form-data">
